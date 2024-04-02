@@ -1,0 +1,17 @@
+import pandas as pd
+import numpy as np
+data = pd.read_csv("data.csv")
+sample_size = 30  # You can change the sample size as needed
+sample = data.sample(n=sample_size)
+population_mean = np.mean(data['column_name'])  # Replace 'column_name' with the column you want to calculate the mean for
+sample_mean = np.mean(sample['column_name'])  # Replace 'column_name' with the column you want to calculate the mean for
+if population_mean == sample_mean:
+    print("Population mean and sample mean are equal.")
+elif population_mean > sample_mean:
+    print("Population mean is greater than sample mean.")
+else:
+    print("Sample mean is greater than population mean.")
+if sample_mean == population_mean:
+    print("The selected sample perfectly represents the population.")
+else:
+    print("The selected sample may or may not represent the population.")
